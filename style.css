@@ -78,3 +78,14 @@ h3 {
     letter-spacing: 0.72px;
     color: #FFB300;
 }
+
+.test {
+    font-family: theSans;
+    font-size: 18px;
+    font-style: normal;
+    font-weight:  530;
+    line-height: normal;
+    letter-spacing: 0.72px;
+    color: #FFB300;
+    text-decoration: none;
+}
