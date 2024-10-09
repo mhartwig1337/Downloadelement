@@ -1,0 +1,22 @@
+@font-face {
+    font-family: montHeavy;
+    src: url(./mont/Mont-HeavyDEMO.otf);
+}
+
+@font-face {
+    font-family: montLight;
+    src: url(./mont/Mont-ExtraLightDEMO.otf);
+}
+@font-face {
+    font-family: theSans;
+    src: url('TheSans C5/Desktop Fonts/TheSansC5-5_Plain.otf');
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: montLight;
+    justify-content: center;
+}
+
+
