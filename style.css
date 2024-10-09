@@ -21,7 +21,7 @@
 }
 
 
-.page_content {
+.page-content {
     margin-left: 192px;
     margin-top: 96px;
 }
@@ -37,12 +37,12 @@ h3 {
     font-weight: 700;
     line-height: 36px;
 }
-.header_link_box {
+.header-link-box {
     margin-top: 54px;
     margin-left: 4px;
 
 }
-.link_box {
+.link-box-container {
     margin-top: 19px;
     display: flex;
     flex-direction: column;
@@ -52,14 +52,14 @@ h3 {
     width: 504px;
 }
 
-.linkAndButton {
+.link-button-container {
     display: flex;
     width: 400px;
     align-items: center;
     justify-content: flex-start;
     
 }
-.buttonbox {
+.link-button-container__img-wrapper {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -67,9 +67,12 @@ h3 {
     gap: 10px;
     margin-right: 5px;
 }
+.link-button-container__img {
+    width: 14px;
+    height: 14px;
+}
 
-
-.file_link {
+.link-button-container__link-wrapper {
     font-family: "theSans";
     font-size: 18px;
     font-style: normal;
@@ -79,7 +82,7 @@ h3 {
     color: #FFB300;
 }
 
-.test {
+.link-button-container__link {
     font-family: theSans;
     font-size: 18px;
     font-style: normal;
@@ -88,4 +91,8 @@ h3 {
     letter-spacing: 0.72px;
     color: #FFB300;
     text-decoration: none;
+}
+.link-button-container__type {
+    color: #b3b1b1;
+    margin-left: 20px;
 }

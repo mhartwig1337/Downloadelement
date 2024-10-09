@@ -1,8 +1,6 @@
-
-const typelist = document.querySelectorAll(".type")
-const itemlist = document.querySelectorAll(".test");
+const typelist = document.querySelectorAll(".link-button-container__type")
+const itemlist = document.querySelectorAll(".link-button-container__link");
 let n = 0;
-
 
 const extension = ext => {
     let item = itemlist[n];
@@ -13,5 +11,3 @@ const extension = ext => {
 }
 
 itemlist.forEach(extension);
-
-
