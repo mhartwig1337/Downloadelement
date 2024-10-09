@@ -17,6 +17,64 @@
     box-sizing: border-box;
     font-family: montLight;
     justify-content: center;
+    /* background-color: grey; */
 }
 
 
+.page_content {
+    margin-left: 192px;
+    margin-top: 96px;
+}
+h2 {
+    font-size: 46px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 50px;
+}
+h3 {
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 36px;
+}
+.header_link_box {
+    margin-top: 54px;
+    margin-left: 4px;
+
+}
+.link_box {
+    margin-top: 19px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 504px;
+}
+
+.linkAndButton {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: flex-start;
+    
+}
+.buttonbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-right: 5px;
+}
+
+
+.file_link {
+    font-family: "theSans";
+    font-size: 18px;
+    font-style: normal;
+    font-weight:  530;
+    line-height: normal;
+    letter-spacing: 0.72px;
+    color: #FFB300;
+}
