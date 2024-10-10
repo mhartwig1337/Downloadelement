@@ -96,3 +96,11 @@ h3 {
     color: #b3b1b1;
     margin-left: 20px;
 }
+
+.link-button-container__symbol {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    margin-right: 13px;
+    margin-left: 11px;
+}
