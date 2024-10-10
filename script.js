@@ -12,8 +12,6 @@ const extension = ext => {
     if (symbol) {
         console.log(symbol);
         console.log(symbollist[n]);
-        /* let link = item.getAttribute("href"); */
-       /*  let end = link.split(".").pop().toLowerCase(); */
         if (end == "jpg" || end == "png" || end == "pdf" || end == "zip" ) {
             symbol.src = "image/symbol-" + end + ".png";
             console.log(symbol.src)
@@ -21,7 +19,6 @@ const extension = ext => {
         else {
             symbol.src = "image/symbol-unknown.jpg";
         }
-        /* typelist[n].innerHTML = "[" + end +"]"; */
     }
     
     n++;
