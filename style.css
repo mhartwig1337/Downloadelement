@@ -17,9 +17,8 @@
     box-sizing: border-box;
     font-family: montLight;
     justify-content: center;
-    /* background-color: grey; */
+    background-color: grey;
 }
-
 
 .page-content {
     margin-left: 192px;
@@ -103,4 +102,27 @@ h3 {
     height: 40px;
     margin-right: 13px;
     margin-left: 11px;
+}
+.vorschaubild-container {
+    max-width: 1121px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+.bild-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+.bild-container__bild {
+    width: 544px;
+    height: 366px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f0f0f0;
+    position: relative;
 }
