@@ -1,5 +1,5 @@
-/* const containerlist = document.querySelectorAll(".link-button-container") */
-/*const typelist = document.querySelectorAll(".link-button-container__type");
+const containerlist = document.querySelectorAll(".link-button-container")
+const typelist = document.querySelectorAll(".link-button-container__type");
 const itemlist = document.querySelectorAll(".link-button-container__link");
 const symbollist = document.querySelectorAll(".link-button-container__symbol");
 const previewlist = document.querySelectorAll(".bild-container__bild");
@@ -12,14 +12,14 @@ const extension = ext => {
     let item = itemlist[n];
     /* let symbol = symbollist[n]; */
     /* let preview = previewlist[n]; */
-    /* let link = item.getAttribute("href");
+     let link = item.getAttribute("href");
     let typeExtension = link.split(".").pop().toLowerCase();
-    typelist[n].innerHTML = "[" + typeExtension +"]"; */
-/*     console.log(containerlist[n].querySelector('.link-button-container__symbol-wrapper'))
-    console.log(containerlist[n].querySelector('.link-button-container__symbol-wrapper')) */
-    /* if (containerlist[n].querySelector('.link-button-container__symbol-wrapper') !== null) {
-        typeExtensionArr[n-nosymbol_n] = typeExtension; */
-        /* if (typeExtension == "jpg" || typeExtension == "png" || typeExtension == "pdf" || typeExtension == "zip" ) {
+    typelist[n].innerHTML = "[" + typeExtension +"]"; 
+    /*  console.log(containerlist[n].querySelector('.link-button-container__symbol-wrapper'))
+    console.log(containerlist[n].querySelector('.link-button-container__symbol-wrapper'))  */
+     if (containerlist[n].querySelector('.link-button-container__symbol-wrapper') !== null) {
+        typeExtensionArr[n-nosymbol_n] = typeExtension; 
+        if (typeExtension == "jpg" || typeExtension == "png" || typeExtension == "pdf" || typeExtension == "zip" ) {
             symbol.src = "image/symbol-" + typeExtension + ".png";
         }
         else {
@@ -47,10 +47,10 @@ const setSymbol = (i) => {
 
 containerlist.forEach(extension);
 symbollist.forEach((item, index) => setSymbol(index));
- */
+
 /* const containerlist = document.querySelectorAll(".link-button-container") */
 
-const getHrefFromContainer = (container) => {
+/* const getHrefFromContainer = (container) => {
     return container.querySelector('.link-button-container__link').getAttribute("href");
 }
 
@@ -123,9 +123,9 @@ containerlist.forEach((container) => {
                 /* const iframe = container.querySelector('.bild-container__bild');
                 iframe.src = getHrefFromContainer(container);
                 iframe.style.display = 'block'; */
-        }
+        /* }
         else {
             setPreviewUnknown(imageContainer); 
         }
     }
-});
+}); */ 
