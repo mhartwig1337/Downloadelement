@@ -3,7 +3,7 @@
 const itemlist = document.querySelectorAll(".link-button-container__link");
 const symbollist = document.querySelectorAll(".link-button-container__symbol");
 const previewlist = document.querySelectorAll(".bild-container__bild");
-const endArr = [];
+const typeExtensionArr = [];
 let i = 0;
 let n = 0;
 let nosymbol_n = 0;
@@ -13,14 +13,14 @@ const extension = ext => {
     /* let symbol = symbollist[n]; */
     /* let preview = previewlist[n]; */
     /* let link = item.getAttribute("href");
-    let end = link.split(".").pop().toLowerCase();
-    typelist[n].innerHTML = "[" + end +"]"; */
+    let typeExtension = link.split(".").pop().toLowerCase();
+    typelist[n].innerHTML = "[" + typeExtension +"]"; */
 /*     console.log(containerlist[n].querySelector('.link-button-container__symbol-wrapper'))
     console.log(containerlist[n].querySelector('.link-button-container__symbol-wrapper')) */
     /* if (containerlist[n].querySelector('.link-button-container__symbol-wrapper') !== null) {
-        endArr[n-nosymbol_n] = end; */
-        /* if (end == "jpg" || end == "png" || end == "pdf" || end == "zip" ) {
-            symbol.src = "image/symbol-" + end + ".png";
+        typeExtensionArr[n-nosymbol_n] = typeExtension; */
+        /* if (typeExtension == "jpg" || typeExtension == "png" || typeExtension == "pdf" || typeExtension == "zip" ) {
+            symbol.src = "image/symbol-" + typeExtension + ".png";
         }
         else {
             symbol.src = "image/symbol-unknown.jpg";
@@ -34,10 +34,10 @@ const extension = ext => {
 
 const setSymbol = (i) => {
     
-    let end = endArr[i];
+    let typeExtension = typeExtensionArr[i];
     let symbol = symbollist[i]
-    if (end == "jpg" || end == "png" || end == "pdf" || end == "zip" ) {
-            symbol.src = "image/symbol-" + end + ".png";
+    if (typeExtension == "jpg" || typeExtension == "png" || typeExtension == "pdf" || typeExtension == "zip" ) {
+            symbol.src = "image/symbol-" + typeExtension + ".png";
         }
     else {
             symbol.src = "image/symbol-unknown.jpg";
@@ -63,6 +63,15 @@ const shouldDisplaySymbol = (container) => {
     return container.querySelector('.link-button-container__symbol-wrapper') !== null;
 }
 
+const shouldDisplayPreview = (container) => {
+    return container.closest('.bild-container') !== null;
+}
+
+const getImageContainer = (container) => {
+    let k = container.closest('.bild-container');
+    return k.querySelector('.bild-container__bild');
+}
+
 const getSymbolSlot = (container) => {
     return container.querySelector('.link-button-container__symbol');
 }
@@ -76,17 +85,47 @@ const setTypeExtension = (container) => {
     typeSlot.innerHTML = "[" + getTypeFromHref(container) +"]";
 }
 
+const setPreviewFromHref = (container, imageContainer) => {
+    let href = getHrefFromContainer(container);
+    imageContainer.src = href;
+}
+
+const setPreviewUnknown = (imageContainer) => {
+    imageContainer.src = "image/symbol-unknown.jpg";
+}
+
 const containerlist = document.querySelectorAll(".link-button-container")
 containerlist.forEach((container) => {
-    let end = getTypeFromHref(container);
+    let typeExtension = getTypeFromHref(container);
     let displaySymbol = shouldDisplaySymbol(container);
+    let displayPreview = shouldDisplayPreview(container); 
     if (displaySymbol) {
-        if (end == "jpg" || end == "png" || end == "pdf" || end == "zip" ) {
-            getSymbolSlot(container).src = "image/symbol-" + end + ".png";
+        let symbolSlot = getSymbolSlot(container);
+        if (typeExtension == "jpg" || typeExtension == "png" || typeExtension == "pdf" || typeExtension == "zip" ) {
+            symbolSlot.src = "image/symbol-" + typeExtension + ".png";
         }
         else {
-            getSymbolSlot(container).src = "image/symbol-unknown.jpg";
+            symbolSlot.src = "image/symbol-unknown.jpg";
         }
     }
-    setTypeExtension(container); 
+    setTypeExtension(container);
+    
+    if(displayPreview) {
+        let imageContainer = getImageContainer(container);
+        if(typeExtension == "jpg" || typeExtension == "jpeg" || typeExtension == "png") {
+            setPreviewFromHref(container, imageContainer);
+        }    
+        else if (typeExtension =="pdf") {
+            let src = getHrefFromContainer(container);
+            
+            imageContainer.outerHTML = `<iframe class="bild-container__bild" src="${src}" style="display:block" ></iframe>`
+                
+                /* const iframe = container.querySelector('.bild-container__bild');
+                iframe.src = getHrefFromContainer(container);
+                iframe.style.display = 'block'; */
+        }
+        else {
+            setPreviewUnknown(imageContainer); 
+        }
+    }
 });
